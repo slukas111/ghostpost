@@ -1,2 +1,14 @@
 <h2> Roasts or Boasts </h2>
 
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    
+    <button type="submit">Submit!</button>
+</form>
+
+<div>
+{% for post in posts %}
+{{ post }}
+{% endfor %}
+</div>
