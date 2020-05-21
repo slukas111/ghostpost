@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils import timezone
+from django.utils.timezone import now
 
 # Create your models here.
 # [x]One model to represent both boasts and roasts
@@ -10,10 +10,12 @@ from django.utils import timezone
 # [x]DateTimeField for submission time
 
 class GhostPost(models.Model):
-    total_both = models.IntegerField(default=0)
-    is_boast = models.BooleanField()
-    post = models.CharField(max_length=500)
-    up_votes= models.IntegerField(default=0)
-    down_votes = models.IntegerField(default=0)
-    time_post =models.DateTimeField(default=timezone.now)
+    total_both    = models.IntegerField(default=0)
+    is_boast      = models.BooleanField(default=True)
+    post          = models.CharField(max_length=500)
+    up_votes      = models.IntegerField(default=0)
+    down_votes    = models.IntegerField(default=0)
+    time_post     = models.DateTimeField(default=now)
 
+    # def __str__(self):
+    #     return self.post
