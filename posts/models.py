@@ -17,5 +17,5 @@ class GhostPost(models.Model):
     down_votes    = models.IntegerField(default=0)
     time_post     = models.DateTimeField(default=now)
 
-    # def __str__(self):
-    #     return self.post
+    def __str__(self):
+        return self.post
