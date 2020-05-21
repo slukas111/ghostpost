@@ -3,12 +3,11 @@ from posts.models import GhostPost
 from posts.forms import AddForm
 
 
-
 # Create your views here.
 def index(req):
-    posts = Ghostpost.objects.all()
+    posts = GhostPost.objects.all()
     form = AddForm()
-    if request.method == "POST":
+    if req.method == "POST":
         form = AddForm(req.POST)
         form.save()
     return render(req, 'index.html', {'posts': posts})
