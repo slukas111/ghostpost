@@ -1,0 +1,6 @@
+<h1> Saved Posts <h1>
+
+{{ post }} | {{ post.time_post }}
+    {% comment %} <button><a href='/{{ post.id}}/'>Upvote {{ post.up_votes }}</a> </button> 
+    <button><a href='/{{ post.id}}/'>Downvote {{ post.down_votes }}</a></button> {% endcomment %}
+<button><a href='/'>Go Back Home!</a></button>
