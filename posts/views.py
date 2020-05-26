@@ -10,8 +10,8 @@ def index(req):
     form = AddForm()
     if req.method == "POST":
         form = AddForm(req.POST)
-        if form.is_valid():
-            posts = form.cleaned_data
+        # if form.is_valid():
+        #     posts = form.cleaned_data
         form.save()
         return HttpResponseRedirect(reverse("home"))
     return render(req, 'index.html',{'form':form,'posts':posts})
@@ -20,7 +20,7 @@ def index(req):
 
 def post_view(req, id):
     data = GhostPost.objects.get(id=id)
-    return render(req, 'html', {'post': post})
+    return render(req, 'post_view.html', {'data': data})
 
 # def total_view():
 

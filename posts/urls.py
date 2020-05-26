@@ -1,8 +1,9 @@
-from django.contrib import admin
-from django.urls import path
+
+from django.urls import path, include
 from posts import views
 
 urlpatterns = [
-   path('', views.index),
-   path('database/<int:id>/', views.post_view)
+    path('',views.index, name='homepage'),
+    path('post_view/<int:id>/', views.post_view),
+
 ]
