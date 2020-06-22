@@ -14,7 +14,7 @@
 {% for post in posts %}
 <br>
 
-<a href ={%url 'post_view' id=post.id%}>{{post}}</a>
+<a href ={%url 'post_view' id=post.id%}>{{post}}</a>| {{post.time_post}}
 {% endfor %} 
 </div>
 {% endblock content %}

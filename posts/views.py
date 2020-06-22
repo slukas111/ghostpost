@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponseRedirect, reverse
 from posts.models import GhostPost
 from posts.forms import AddForm
 from datetime import datetime
+from django.http import HttpResponse
 
 
 
@@ -26,8 +27,10 @@ def boast_view(request):
     return render(request, 'index.html', {'posts':data})
 
 def roast_view(request):
+
     data= GhostPost.objects.filter(is_boast=False).order_by('-time_post')
     return render(request, 'index.html', {'posts':data})
+
 
 def vote_view(request):
     data = GhostPost.objects.order_by('-total_both')
