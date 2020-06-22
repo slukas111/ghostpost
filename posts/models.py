@@ -10,12 +10,12 @@ from django.utils.timezone import now
 # [x]DateTimeField for submission time
 
 class GhostPost(models.Model):
+    post          = models.CharField(max_length=250)
+    time_post     = models.DateTimeField(default=now)
     total_both    = models.IntegerField(default=0)
-    is_boast      = models.BooleanField(default=True)
-    post          = models.CharField(max_length=500)
+    is_boast      = models.BooleanField(default=False)
     up_votes      = models.IntegerField(default=0)
     down_votes    = models.IntegerField(default=0)
-    time_post     = models.DateTimeField(default=now)
 
     def __str__(self):
         return self.post

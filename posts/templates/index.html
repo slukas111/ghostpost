@@ -1,17 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
 <h2> Roasts or Boasts </h2>
-
+<div>
+{%if form%}
 <form action="" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     
     <button type="submit">Submit!</button>
 </form>
-
+{% endif %}
 <div>
 {% for post in posts %}
-{{ post }}
-{% endfor %}
+<br>
+
+<a href ={%url 'post_view' id=post.id%}>{{post}}</a>
+{% endfor %} 
 </div>
 {% endblock content %}

@@ -1,6 +1,14 @@
-<h1> Saved Posts <h1>
+<h1>Post Detail:</h1>
 
-{{ post }} | {{ post.time_post }}
-    {% comment %} <button><a href='/{{ post.id}}/'>Upvote {{ post.up_votes }}</a> </button> 
-    <button><a href='/{{ post.id}}/'>Downvote {{ post.down_votes }}</a></button> {% endcomment %}
+
+
+<h3>{{data.time_post}}</h3>
+
+{{data.post}}
+
+{{data.total_both}} total votes
+<p>
+<a href='/up_vote/{{data.id}}'><button>Upvote</button></a>
+<a href='/down_vote/{{data.id}}'><button>Downvote</button></a>
+</p>
 <button><a href='/'>Go Back Home!</a></button>
